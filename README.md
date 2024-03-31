@@ -1,1 +1,1 @@
-# 30-day-coding-glow-up
+# 30 Day Coding Glow Up
