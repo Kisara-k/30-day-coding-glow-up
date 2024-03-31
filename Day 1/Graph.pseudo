@@ -1,0 +1,78 @@
+bfs(graph, start)
+
+    visited <- new set
+    to_visit <- new queue
+    
+    add start to to_visit
+    add start to visited   // We can instead mark nodes as visited externally
+    
+    while to_visit is not empty
+        current <- dequeue from to_visit
+        print(current)     // Process
+        
+        for neighbor in graph[current]
+            if neighbor is not in visited
+                enqueue neighbor to to_visit
+				add neighbor to visited
+
+
+// Recursive Approach
+
+dfs(graph, start)
+
+    visited <- new set
+    dfs(graph, start, visited)
+
+dfs(graph, start, visited)
+
+    add start to visited
+    print(start)         // Process
+
+    for neighbor in graph[start]
+        if neighbor is not in visited
+            dfs(graph, neighbor, visited)
+
+
+// Iterative Approach using Stack
+
+dfs(graph, start)
+
+    visited <- new set
+    to_visit <- new stack
+    
+    add start to to_visit
+
+    while to_visit is not empty 
+        current <- pop from to_visit
+
+        if current is not visited:
+            add current to visited
+            print(current)
+
+            for neighbor in graph[current]
+                if neighbor is not in visited   
+                    add neighbor to to_visit
+
+
+
+
+
+
+
+// The following may cause errors (check)
+
+dfs(graph, start)
+
+    visited <- new set
+    to_visit <- new stack
+    
+    add start to to_visit
+
+    while to_visit is not empty 
+        current <- pop from to_visit
+        add neighbor to visited
+        print(current)
+
+        for neighbor in graph[current]
+            if neighbor is not in visited
+                add neighbor to to_visit
